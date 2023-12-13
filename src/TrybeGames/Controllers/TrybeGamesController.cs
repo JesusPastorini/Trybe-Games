@@ -164,8 +164,37 @@ public class TrybeGamesController
     // 3. Crie a funcionalidade de adicionar novo Jogo ao Banco de dados.
     public void AddGame()
     {
-        // implementar
-        Console.WriteLine("Ainda não é possível realizar essa funcionalidade!");
+        Console.WriteLine("Digite o nome do novo Jogo:");
+        var gameName = Console.ReadLine();
+
+        Console.WriteLine("Digite a data de lançamento do Jogo (no formato dd/mm/yyyy):");
+        var releaseDateInput = Console.ReadLine();
+
+        // Convertendo a string diretamente para DateTime
+        var releaseDate = DateTime.ParseExact(releaseDateInput, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+        Console.WriteLine("Escolha o tipo de jogo (digite o número correspondente):");
+        PrintGameTypes();
+
+        Console.WriteLine("Digite o tipo do game:");
+        var gameTypeInput = Console.ReadLine();
+        Enum.TryParse(gameTypeInput, out GameType gameType);
+
+        var gameId = database.Games.Count + 1;
+
+        var newGame = new Game
+        {
+            Id = gameId,
+            Name = gameName,
+            ReleaseDate = releaseDate,
+            GameType = gameType,
+        };
+
+        database.Games.Add(newGame);
+
+        Console.WriteLine($"Jogo {newGame.Name} adicionado com sucesso!");
+
+
     }
 
     public void ChangeGameStudio(Game game)

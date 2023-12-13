@@ -1,6 +1,7 @@
 namespace TrybeGames;
 
-public enum GameType {
+public enum GameType
+{
     Action,
     Adventure,
     Puzzle,
