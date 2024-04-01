@@ -4,9 +4,9 @@
 
 O projeto Trybe Games consiste no desenvolvimento de métodos e consultas LINQ para manipulação de coleções de dados relacionados a jogadores, estúdios de jogos e jogos em si. O objetivo é implementar funcionalidades que permitam adicionar novos jogadores, estúdios e jogos ao banco de dados, além de realizar consultas para obter informações específicas sobre esses elementos.
 
-## 📸 Tela de Login da Aplicação
+## 📸 Diagrama de Relacionamento
 
-![TrybeGames](public/login.gif)
+![TrybeGames](src/complete-diagram.png)
 
 ## 🛠️ Tecnologias e Habilidades
 
